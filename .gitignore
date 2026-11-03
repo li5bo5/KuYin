@@ -1,0 +1,29 @@
+# 构建产物与发布包隔离
+Publish/
+*.zip
+dist/
+src-tauri/target/
+
+# Node 依赖
+node_modules/
+.npm/
+
+# 本地只读参考仓库与内部开发文档 (严禁提交)
+.agents/
+开发文档/
+EchoMusic/
+MoeKoeMusic/
+KuGouMusicApi/
+
+# 本地临时数据与日志
+.kuyin_data/
+*.log
+*.tmp
+*.bak
+
+# 编辑器与系统文件
+.vscode/
+.idea/
+*.suo
+*.user
+Thumbs.db

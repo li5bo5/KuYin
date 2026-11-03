@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stemGrad" x1="195" y1="195" x2="355" y2="805" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#57B8FC" stop-opacity="0.96"/>
+      <stop offset="50%" stop-color="#299EF5" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#40C2FA" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="upperArmGrad" x1="220" y1="580" x2="695" y2="195" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#33C7E0" stop-opacity="0.84"/>
+      <stop offset="55%" stop-color="#7AD1FC" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#A3E3FF" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="lowerArmGrad" x1="220" y1="400" x2="695" y2="805" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3DD1CC" stop-opacity="0.84"/>
+      <stop offset="45%" stop-color="#1FD9B8" stop-opacity="0.86"/>
+      <stop offset="100%" stop-color="#8FF2DB" stop-opacity="0.90"/>
+    </linearGradient>
+    <linearGradient id="archGrad" x1="195" y1="500" x2="445" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#57DBD6" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#24D4BA" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="playGrad" x1="480" y1="320" x2="815" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5CEBE0" stop-opacity="0.86"/>
+      <stop offset="55%" stop-color="#52EDD6" stop-opacity="0.89"/>
+      <stop offset="100%" stop-color="#8FF7E8" stop-opacity="0.93"/>
+    </linearGradient>
+    <linearGradient id="playRim" x1="480" y1="295" x2="815" y2="705" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D9FFFA" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#73EBD9" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#26C7B8" stop-opacity="0.90"/>
+    </linearGradient>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0A5285" flood-opacity="0.16"/>
+    </filter>
+    <filter id="playShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-5" dy="10" stdDeviation="12" flood-color="#056159" flood-opacity="0.22"/>
+    </filter>
+    <clipPath id="stemClip">
+      <rect x="195" y="195" width="160" height="610" rx="24" ry="24"/>
+    </clipPath>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- Left Vertical Stem -->
+    <rect x="195" y="195" width="160" height="610" rx="24" ry="24" fill="url(#stemGrad)" stroke="#BFF0FF" stroke-width="3" stroke-opacity="0.75"/>
+    <g clip-path="url(#stemClip)">
+      <polygon points="195,195 355,195 355,395" fill="#85D6FF" fill-opacity="0.38"/>
+      <polygon points="195,805 355,805 355,605" fill="#6BE0FF" fill-opacity="0.38"/>
+    </g>
+
+    <!-- Upper-Right Sky-Blue Origami Ribbon -->
+    <path d="M 545 195 L 685 195 Q 702 195 690 208 L 315 650 Q 298 670 272 670 L 195 670 L 195 520 L 495 215 Q 515 195 545 195 Z"
+          fill="url(#upperArmGrad)" stroke="#8CD9FA" stroke-width="3" stroke-opacity="0.85"/>
+
+    <!-- Lower-Right Mint-Turquoise Origami Ribbon -->
+    <path d="M 195 330 L 272 330 Q 298 330 315 350 L 690 792 Q 702 805 685 805 L 545 805 Q 515 805 495 785 L 195 480 Z"
+          fill="url(#lowerArmGrad)" stroke="#73EBCC" stroke-width="3" stroke-opacity="0.85"/>
+
+    <!-- C-Arch Cutout on Left Stem -->
+    <g clip-path="url(#stemClip)">
+      <path d="M 195 335 C 215 435, 325 450, 355 385 L 445 500 L 355 615 C 325 550, 215 565, 195 665 Z"
+            fill="url(#archGrad)" stroke="#BFFAF2" stroke-width="3.5" stroke-opacity="0.72"/>
+    </g>
+  </g>
+
+  <!-- Right Floating Play Triangle -->
+  <g filter="url(#playShadow)">
+    <path d="M 480 328 Q 480 288 515 308 L 792 478 Q 825 500 792 522 L 515 692 Q 480 712 480 672 Z"
+          fill="url(#playGrad)" stroke="url(#playRim)" stroke-width="4"/>
+  </g>
+</svg>
