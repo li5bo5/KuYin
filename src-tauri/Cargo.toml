@@ -1,0 +1,64 @@
+[package]
+name = "kuyin"
+version = "1.0.0"
+description = "KuYin - Windows 11 Ultra Low Memory Music Player"
+authors = ["KuYin Authors"]
+edition = "2021"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-ico", "image-png"] }
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "sync", "fs"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "cookies", "rustls-tls", "gzip"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+md-5 = "0.10"
+sha1 = "0.10"
+aes = "0.8"
+cbc = "0.1"
+rsa = { version = "0.9", features = ["sha2"] }
+base64 = "0.22"
+flate2 = "1.0"
+num-bigint = "0.4"
+lru = "0.12"
+uuid = { version = "1", features = ["v4"] }
+tracing = "0.1"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+    "Foundation",
+    "Foundation_Collections",
+    "Graphics_Imaging",
+    "Media",
+    "Media_Core",
+    "Media_Playback",
+    "Devices_Enumeration",
+    "Media_Devices",
+    "Storage_Streams",
+    "Win32_Foundation",
+    "Win32_Graphics_Dwm",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Com",
+    "Win32_System_LibraryLoader",
+    "Win32_UI_HiDpi",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
